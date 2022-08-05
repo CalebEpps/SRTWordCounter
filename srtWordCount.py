@@ -6,7 +6,7 @@ while noQuit == 'y':
     try:
         print("Make sure your SRT file is in the same directory.")
         print("Must be .srt file.")
-        fileName = str(input("Input your SRT file name (Do NOT include .srt): "))
+        fileName = str(input("Input your SRT file name or the path to it (Do NOT include .srt): "))
 
         srt = open(fileName + ".srt", "r")
 
@@ -35,8 +35,8 @@ while noQuit == 'y':
 
         print("Word Count: ", len(text))
 
-    except:
-        print("There was an error with your input. Please try again.")
+    except FileNotFoundError:
+        print("The input file wasn't found. Is it in this folder and is the path correct?")
         print("Error Code: ", sys.exc_info()[0])
         print("\n")
 
